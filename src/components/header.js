@@ -2,10 +2,12 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+import logo from '../images/logo.svg'
+
+const Header = ({ siteTitle, siteDesc }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#F46912`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -14,9 +16,13 @@ const Header = ({ siteTitle }) => (
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
+        display: `flex`,
+        alignItems: `center`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <img src={logo} alt="logo" width="100" style={{display: 'inline-block', marginBottom: 0, marginRight: `15px`}} />
+      <div className="title-group" style={{display: `flex`, flexDirection: `column`, justifyContent: `center`, alignItems: `flex-start`}}>
+      <h1 style={{ margin: 0, display: 'inline-block', fontFamily: `Marta, sans-serif`, fontSize: '1.5rem', fontWeight: `bold` }}>
         <Link
           to="/"
           style={{
@@ -27,6 +33,11 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <h2 style={{marginBottom: 0, color: `#FCB826`, fontSize: `1.15rem`, fontWeight: `300` }}>
+        {siteDesc}
+      </h2>
+      </div>
+      
     </div>
   </header>
 )

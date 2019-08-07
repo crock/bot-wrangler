@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Marta';
+  src: url('../fonts/Marta_Regular.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Marta';
+  src: url('../fonts/Marta_Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Marta';
+  src: url('../fonts/Marta_Italic.otf');
+  font-style: italic;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
