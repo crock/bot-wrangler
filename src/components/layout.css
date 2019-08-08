@@ -218,7 +218,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: Avenir, Arial, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -637,4 +637,51 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.primary-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.primary-nav > a {
+  text-decoration: none;
+  color: #FCB826;
+  padding: 5px 10px;
+} 
+
+.primary-nav > a:hover {
+  color: white;
+  position: relative;
+}
+
+.primary-nav > .active {
+  color: white;
+  position: relative;
+}
+
+.primary-nav > .active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 50%;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.primary-nav > a:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 50%;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }

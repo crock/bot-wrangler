@@ -14,30 +14,45 @@ const Header = ({ siteTitle, siteDesc }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
+        maxWidth: 1170,
         padding: `1.45rem 1.0875rem`,
         display: `flex`,
         alignItems: `center`,
+        justifyContent: `space-between`,
       }}
     >
-      <img src={logo} alt="logo" width="100" style={{display: 'inline-block', marginBottom: 0, marginRight: `15px`}} />
-      <div className="title-group" style={{display: `flex`, flexDirection: `column`, justifyContent: `center`, alignItems: `flex-start`}}>
-      <h1 style={{ margin: 0, display: 'inline-block', fontFamily: `Marta, sans-serif`, fontSize: '1.5rem', fontWeight: `bold` }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <h2 style={{marginBottom: 0, color: `#FCB826`, fontSize: `1.15rem`, fontWeight: `300` }}>
-        {siteDesc}
-      </h2>
+      <div className="logo"
+        style={{
+          display: `flex`,
+          flexFlow: `row nowrap`,
+          alignItems: `center`,
+        }}
+      >
+        <img src={logo} alt="logo" width="100" style={{display: 'inline-block', marginBottom: 0, marginRight: `15px`}} />
+        <div className="title-group" style={{display: `flex`, flexDirection: `column`, justifyContent: `center`, alignItems: `flex-start`}}>
+          <h1 style={{ margin: 0, display: 'inline-block', fontFamily: `Marta, sans-serif`, fontSize: '1.5rem', fontWeight: `bold` }}>
+            <Link
+              to="/"
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+              }}
+            >
+              {siteTitle}
+            </Link>
+          </h1>
+          <h2 style={{marginBottom: 0, color: `#FCB826`, fontSize: `1.15rem`, fontWeight: `300` }}>
+            {siteDesc}
+          </h2>
+        </div>
       </div>
       
+      <nav className="primary-nav">
+        <Link to="/" activeClassName="active">Home</Link>
+        <Link to="/blog" activeClassName="active">Blog</Link>
+        <a href="https://forums.botwrangler.me" target="_blank">Forums</a>
+        <a href="https://discord.gg/" target="_blank">Discord</a>
+      </nav>
     </div>
   </header>
 )

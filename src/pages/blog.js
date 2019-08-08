@@ -3,13 +3,12 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import CTACard from '../components/cta-card'
 
-const IndexPage = () => (
+const BlogPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <CTACard />
+    <SEO title="Blog" />
+    <p>blog posts</p>
   </Layout>
 )
 
-export default IndexPage
+export default BlogPage
