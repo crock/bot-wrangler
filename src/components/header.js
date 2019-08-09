@@ -50,8 +50,7 @@ const Header = ({ siteTitle, siteDesc }) => (
       <nav className="primary-nav">
         <Link to="/" activeClassName="active">Home</Link>
         <Link to="/blog" activeClassName="active">Blog</Link>
-        <a href="https://forums.botwrangler.me" target="_blank">Forums</a>
-        <a href="https://discord.gg/" target="_blank">Discord</a>
+        <a href="https://discord.gg/xXsssK" target="_blank">Discord</a>
       </nav>
     </div>
   </header>
