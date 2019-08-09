@@ -11,14 +11,14 @@ const Header = ({ siteTitle, siteDesc }) => (
       marginBottom: `1.45rem`,
     }}
   >
-    <div
+    <div className="header-wrap"
       style={{
         margin: `0 auto`,
         maxWidth: 1170,
         padding: `1.45rem 1.0875rem`,
         display: `flex`,
+        flexFlow: `row wrap`,
         alignItems: `center`,
-        justifyContent: `space-between`,
       }}
     >
       <div className="logo"

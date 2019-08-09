@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import robotEmoji from '../images/robot.png'
 
 const CTACard = () => (
-    <div id="order" className="card cta"
+    <div id="order" className="card cta-card"
         style={{
             display: `flex`,
             flexFlow: `row wrap`,
@@ -12,8 +12,6 @@ const CTACard = () => (
             alignItems: `center`,
             padding: `25px`,
             boxShadow: `rgb(236, 236, 236) 3px 3px 10px 0`,
-            marginRight: `25px`,
-            marginBottom: `25px`,
             borderRadius: `6px`,
         }}
     >

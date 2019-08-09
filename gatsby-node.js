@@ -37,6 +37,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       return
     }
     // Create pages for each markdown file.
+    const blogTemplate = path.resolve(`./src/templates/blog.js`)
+    let posts = result.data.allWordpressPost.edges.map(post => post.node)
+    createPage({
+        path: `/blog/`,
+        component: slash(blogTemplate),
+        context: {
+            posts: posts
+        }
+    })
+
     const postTemplate = path.resolve(`./src/templates/post.js`)
     _.each(result.data.allWordpressPost.edges, edge => {
         createPage({
