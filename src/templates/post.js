@@ -18,7 +18,7 @@ const Post = ({ pageContext }) => {
             <SEO title={title} />
             <h1>{title}</h1>
             <span className="post-meta"><a href="#">{author.name}</a> | { formatDate(date) }</span>
-            <p dangerouslySetInnerHTML={{ __html: content }}></p>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
         </Layout>
     )
 }

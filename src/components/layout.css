@@ -718,6 +718,7 @@ pre tt:after {
 }
 
 @media screen and (max-width: 768px) {
+
   .page-content {
     flex-flow: column nowrap !important;
     justify-content: flex-start !important;
@@ -732,4 +733,29 @@ pre tt:after {
     margin: 25px 0;
   }
   
+}
+
+.bot-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (max-width: 529px) {
+  .card.bot-card {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 530px) {
+  .card.bot-card {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .card.bot-card {
+    flex-basis: 33.333%;
+  }
 }
