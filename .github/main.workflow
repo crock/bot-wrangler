@@ -14,6 +14,6 @@ action "deploy-gh-pages" {
     COMMIT_NAME = "Alex Crocker"
   }
   secrets = [
-    "GITHUB_TOKEN",
+    "ACCESS_TOKEN",
   ]
 }
