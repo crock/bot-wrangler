@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Z_BLOCK } from 'zlib';
 
 const BotCard = ({ botData }) => {
     const { title, slug, author, acf, content, excerpt, featured_media, wordpress_id } = botData

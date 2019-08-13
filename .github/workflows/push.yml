@@ -1,0 +1,17 @@
+on: push
+name: Build and deploy on push
+jobs:
+  deploy-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: deploy-gh-pages
+      uses: JamesIves/github-pages-deploy-action@1.1.3
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        BUILD_SCRIPT: npm install && npm run-script build
+        CNAME: botwrangler.me
+        COMMIT_EMAIL: hello@crock.dev
+        COMMIT_NAME: Alex Crocker
+        FOLDER: public
