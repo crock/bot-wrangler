@@ -14,4 +14,3 @@ jobs:
         CNAME: botwrangler.me
         COMMIT_EMAIL: hello@crock.dev
         COMMIT_NAME: Alex Crocker
-        FOLDER: public
