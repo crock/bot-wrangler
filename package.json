@@ -2,7 +2,7 @@
   "name": "bot-wrangler",
   "private": true,
   "description": "Chat Bot Development",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Alex Crocker <alex@crocbuzzstudios.com>",
   "dependencies": {
     "gatsby": "^2.13.51",
