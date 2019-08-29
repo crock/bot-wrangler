@@ -25,7 +25,7 @@ const BotCard = ({ botData }) => {
                 }}
             />
             <h4 style={{marginBottom: 0, marginTop: `15px`}}>{title}</h4>
-            <div style={{marginBottom: `25px`, fontSize: `0.8rem`, color: `darkgrey`}} className="bot-meta"><strong>Creator:</strong> <Link to="#">{author.name}</Link></div>
+            <div style={{marginBottom: `25px`, fontSize: `0.8rem`, color: `darkgrey`}} className="bot-meta"><strong>Creator:</strong> <Link to={`/user/${author.slug}`}>{author.name}</Link></div>
             <div style={{textAlign: `center`}} dangerouslySetInnerHTML={{ __html: excerpt }}></div>
             <Link to={`/bot/${slug}`}
                 style={{

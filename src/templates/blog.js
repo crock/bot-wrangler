@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 
 const Blog = ({ pageContext }) => {
     const { posts } = pageContext
-    console.log(posts)
 
     const formatDate = date => {
 
@@ -33,7 +32,7 @@ const Blog = ({ pageContext }) => {
                         }}
                     >
                         <h2 style={{margin: 0}}>{post.title}</h2>
-                        <span className="post-meta"><Link to="#">{post.author.name}</Link> | { formatDate(post.date) }</span>
+                        <span className="post-meta">Posted by <Link to={`/user/${post.author.slug}`}>{post.author.name}</Link> | { formatDate(post.date) }</span>
                         <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
                         <Link to={`/blog/${post.slug}`}
                             style={{
