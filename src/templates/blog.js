@@ -33,7 +33,7 @@ const Blog = ({ pageContext }) => {
                         }}
                     >
                         <h2 style={{margin: 0}}>{post.title}</h2>
-                        <span className="post-meta"><a href="#">{post.author.name}</a> | { formatDate(post.date) }</span>
+                        <span className="post-meta"><Link to="#">{post.author.name}</Link> | { formatDate(post.date) }</span>
                         <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
                         <Link to={`/blog/${post.slug}`}
                             style={{

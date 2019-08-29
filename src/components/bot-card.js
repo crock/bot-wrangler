@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const BotCard = ({ botData }) => {
-    const { title, slug, author, acf, content, excerpt, featured_media, wordpress_id } = botData
+    const { title, slug, author, excerpt, featured_media } = botData
 
     return (
         <div className="card bot-card"
@@ -25,7 +25,7 @@ const BotCard = ({ botData }) => {
                 }}
             />
             <h4 style={{marginBottom: 0, marginTop: `15px`}}>{title}</h4>
-            <div style={{marginBottom: `25px`, fontSize: `0.8rem`, color: `darkgrey`}} className="bot-meta"><strong>Creator:</strong> <a href="#">{author.name}</a></div>
+            <div style={{marginBottom: `25px`, fontSize: `0.8rem`, color: `darkgrey`}} className="bot-meta"><strong>Creator:</strong> <Link to="#">{author.name}</Link></div>
             <div style={{textAlign: `center`}} dangerouslySetInnerHTML={{ __html: excerpt }}></div>
             <Link to={`/bot/${slug}`}
                 style={{

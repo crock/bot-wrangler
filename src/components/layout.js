@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Sidebar from "./sidebar"
+import RecentPosts from './recent-posts'
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -47,7 +48,7 @@ const Layout = ({ children }) => {
         >
           <main style={{flex: 1}}>{children}</main>
           <Sidebar>
-            sidebar
+            <RecentPosts />
           </Sidebar>
         </div>
         <footer>
