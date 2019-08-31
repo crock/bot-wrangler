@@ -10,6 +10,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <CTACard />
+    <h2 style={{
+      fontSize: `1.5rem`,
+    }}>Featured Bots</h2>
     <div className="bot-list">
         <StaticQuery
           query={graphql`
