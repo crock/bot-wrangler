@@ -1,44 +1,59 @@
 import React from 'react'
 import { Link } from "gatsby"
+import styled from "styled-components"
 
-import robotEmoji from '../images/robot.png'
+import img from '../images/megaphone.png'
+
+const Container = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: rgb(236, 236, 236) 3px 3px 10px 0;
+    border-radius: 6px;
+    margin: 25px 25px 25px 0;
+    &:first-of-type { margin-top: 0 }
+    @media screen and (max-width: 768px) {
+        margin: 25px 0;
+    }
+`
+
+const Image = styled.img`
+    display: inline-flex;
+    width: auto;
+    height: 150px;
+    margin-right: 25px;
+`
+
+const TextGroup = styled.div`
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+`
+
+const StyledLink = styled(Link)`
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: #F46912;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+`
 
 const CTACard = () => (
-    <div id="order" className="card cta-card"
-        style={{
-            display: `flex`,
-            flexFlow: `row wrap`,
-            justifyContent: `center`,
-            alignItems: `center`,
-            padding: `25px`,
-            boxShadow: `rgb(236, 236, 236) 3px 3px 10px 0`,
-            borderRadius: `6px`,
-        }}
-    >
-        <img src={robotEmoji} alt="apple robot face emoji" style={{ display: `inline-flex`, width: `150px`, height: `150px`, marginRight: `25px` }} />
-        <div className="text-group"
-            style={{
-                flex: `2`,
-                display: `flex`,
-                flexDirection: `column`
-            }}
-        >
-            <h3>Need a custom chat bot?</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim numquam, culpa minus, nihil nostrum cum voluptatum sunt, magni consequatur nobis eveniet dignissimos harum deserunt tenetur doloribus quisquam aperiam impedit? Placeat.</p>
-            <Link to="/order" style={{
-                width: `200px`,
-                height: `40px`,
-                lineHeight: `40px`,
-                borderRadius: `6px`,
-                backgroundColor: `#F46912`,
-                color: `#ffffff`,
-                textTransform: `uppercase`,
-                textDecoration: `none`,
-                textAlign: `center`,
-            }}>Order Now</Link>
-        </div>
-        
-    </div>
+    <Container className="card cta-card">
+        <Image src={img} alt="megaphone" />
+        <TextGroup>
+            <h3>Promote Your Bot!</h3>
+            <p>Whether you want to sponsor a blog post or promote a product or service that you think my readers would be interested in, we offer a limited amount of advertising to take advantage of. Get in touch today!</p>
+            <StyledLink to="/advertising">Tell Me More</StyledLink>
+        </TextGroup>
+    </Container>
 )
   
 export default CTACard

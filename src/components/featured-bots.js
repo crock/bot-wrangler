@@ -3,9 +3,7 @@ import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import img from "../images/robot.png"
-
-const RecentPost = styled.div`
+const FeatBot = styled.div`
     width: 100%;
     height: 100px;
     max-width: 300px;
@@ -21,6 +19,8 @@ const RecentPost = styled.div`
     img {
         margin-bottom: 0;
         margin-right: 15px;
+        border-radius: 50%;
+        border: 3px solid #F46912;
         width: 48px;
         height: 48px;
     }
@@ -47,29 +47,31 @@ const TextGroup = styled.div`
   font-size: 0.75rem;
 `
 
-const PostTitle = styled(Link)`
+const BotTitle = styled(Link)`
     text-decoration: none;
     color: #F46912;
     font-weight: bold;
 `
 
-const PostDate = styled.small`
+const BotLang = styled.small`
     color: grey;
     text-transform: uppercase;
 `
 
-const RecentPosts = () => (
+const FeaturedBots = () => (
         <StaticQuery
           query={graphql`
-            query RecentPostsQuery {
-                allTumblrPost(limit: 5) {
+            query FeaturedBotsQuery {
+                allMarkdownRemark(limit: 3) {
                     edges {
                         node {
                             id
-                            title
-                            date
-                            slug
-                            type
+                            frontmatter {
+                                title
+                                slug
+                                botLang
+                                image
+                            }
                         }
                     }
                 }
@@ -77,20 +79,20 @@ const RecentPosts = () => (
           `}
           render={data => {
             return (
-                <Widget className="recent-posts">
-                    <h5>Recent Posts</h5>
+                <Widget className="featured-bots">
+                    <h5>Featured Bots</h5>
                     {
-                        data.allTumblrPost.edges.map(edge => {
+                        data.allMarkdownRemark.edges.map(edge => {
                             const { node } = edge
-                            const post = node
+                            const bot = node
                             return (
-                                <RecentPost id={post.id} key={post.id}>
-                                    <img src={img} alt="robot emoji"/>
+                                <FeatBot id={bot.id} key={bot.id}>
+                                    <img src={`/${bot.frontmatter.image}`} alt={bot.frontmatter.title} />
                                     <TextGroup>
-                                        <PostTitle to={`/blog/${post.slug}`} className="post-title">{post.title}</PostTitle>
-                                        <PostDate className="post-date">{ new Date(post.date).toDateString() }</PostDate>
+                                        <BotTitle to={`/bot/${bot.frontmatter.slug}`} className="bot-title">{bot.frontmatter.title}</BotTitle>
+                                        <BotLang className="bot-lang">{ bot.frontmatter.botLang }</BotLang>
                                     </TextGroup>
-                                </RecentPost>
+                                </FeatBot>
                             )
                         })
                     }
@@ -100,4 +102,4 @@ const RecentPosts = () => (
         />
 )
 
-export default RecentPosts
+export default FeaturedBots
