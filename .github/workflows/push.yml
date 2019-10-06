@@ -13,8 +13,8 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TUMBLR_CONSUMER_KEY: ${{ secrets.TUMBLR_CONSUMER_KEY }}
         BUILD_SCRIPT: npm install && npm run-script build
-        CNAME: botwrangler.me
         COMMIT_EMAIL: hello@crock.dev
         COMMIT_NAME: Alex Crocker
         BRANCH: gh-pages
