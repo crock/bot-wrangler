@@ -1,10 +1,15 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `The Bot Wrangler`,
     description: `Chat Bot Development`,
     author: `@crocbuzz`,
+    siteUrl: `https://botwrangler.me`
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -28,19 +33,31 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // your wordpress source
-        baseUrl: `cms.botwrangler.me`,
-        protocol: `https`,
-        // is it hosted on wordpress.com, or self-hosted?
-        hostingWPCOM: false,
-        // does your site use the Advanced Custom Fields Plugin?
-        useACF: true,
+        path: `${__dirname}/src/pages`,
+        name: "pages",
+      },
+    },
+    {
+      resolve: `gatsby-source-tumblr`,
+      options: {
+        blogIdentifier: `t:WDrmGDfoS56O8WaVN8J3VA`,
+        consumerKey: process.env.TUMBLR_CONSUMER_KEY,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        "excerpt_separator": `<!-- end -->`
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `the-bot-wrangler`
       }
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
   ],
 }
